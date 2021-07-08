@@ -1,0 +1,4 @@
+FROM amazoncorretto:11
+EXPOSE 8999
+ADD target/authorization-0.0.1-SNAPSHOT.jar authorization.jar 
+ENTRYPOINT ["java","-jar","/authorization.jar"]

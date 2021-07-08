@@ -1,0 +1,4 @@
+FROM amazoncorretto:11
+EXPOSE 8999
+ADD target/auditchecklist-0.0.1-SNAPSHOT.jar auditchecklist.jar 
+ENTRYPOINT ["java","-jar","/auditchecklist.jar"]

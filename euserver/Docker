@@ -1,0 +1,4 @@
+FROM amazoncorretto:11
+EXPOSE 8999
+ADD target/euserver-0.0.1-SNAPSHOT.jar euserver.jar 
+ENTRYPOINT ["java","-jar","/euserver.jar"]

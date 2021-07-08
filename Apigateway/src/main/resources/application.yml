@@ -1,0 +1,38 @@
+eureka:
+   instance:
+      hostname: localhost
+ 
+spring:
+   application:
+      name: api-gateway
+   cloud: 
+      gateway:
+         routes:
+         - id: LOGIN
+           uri: lb://LOGIN
+           predicates:
+              - Path=/log/**
+           
+         - id: AUDIT
+           uri: lb://AUDIT
+           predicates:
+             - Path=/req/**
+
+         - id: AUDITCHECKLIST
+           uri: lb://AUDITCHECKLIST
+           predicates:
+             - Path=/aud/**
+
+         - id: AUDITSEVERITY
+           uri: lb://AUDITSEVERITY
+           predicates:
+             - Path=/**
+
+         - id: AUDITSEVERITY
+           uri: lb://AUDITSEVERITY
+           predicates:
+             - Path=/**
+
+
+
+
